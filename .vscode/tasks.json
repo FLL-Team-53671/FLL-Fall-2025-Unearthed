@@ -164,7 +164,7 @@
             "id": "robotName",
             "description": "Which Robot?",
             "options": [
-                "Cobra Bytes 1"
+                "Cuddles"
             ]
         }
     ]
