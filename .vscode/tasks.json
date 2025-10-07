@@ -4,12 +4,15 @@
         {
             "label": "Run on my robot",
             "type": "shell",
-            "command": "${workspaceFolder}/.venv/Scripts/pybricksdev.exe",
+            "command": "${workspaceFolder}/.venv/bin/pybricksdev",
+            "windows": {
+                "command": "${workspaceFolder}/.venv/Scripts/pybricksdev.exe"
+            },
             "args": [
                 "run",
                 "ble",
                 "--name",
-                "${env:robotName}",
+                "${config:fllRobotName}",
                 "${file}"
             ],
             "problemMatcher": {
@@ -36,12 +39,15 @@
         {
             "label": "Run master_program.py on my robot",
             "type": "shell",
-            "command": "${workspaceFolder}/.venv/Scripts/pybricksdev.exe",
+            "command": "${workspaceFolder}/.venv/bin/pybricksdev",
+            "windows": {
+                "command": "${workspaceFolder}/.venv/Scripts/pybricksdev.exe"
+            },
             "args": [
                 "run",
                 "ble",
                 "--name",
-                "${env:robotName}",
+                "${config:fllRobotName}",
                 "master_program.py"
             ],
             "problemMatcher": {
@@ -68,7 +74,7 @@
         {
             "label": "git pull on startup",
             "type": "shell",
-            "command": "python ${workspaceFolder}\\.vscode\\gitpull.py",
+            "command": "python ${workspaceFolder}/.vscode/gitpull.py",
             "windows": {
                 "command": "python ${workspaceFolder}\\.vscode\\gitpull.py"
             },
@@ -84,7 +90,10 @@
         {
             "label": "Run on alt robot",
             "type": "shell",
-            "command": "${workspaceFolder}/.venv/Scripts/pybricksdev.exe",
+            "command": "${workspaceFolder}/.venv/bin/pybricksdev",
+            "windows": {
+                "command": "${workspaceFolder}/.venv/Scripts/pybricksdev.exe"
+            },
             "args": [
                 "run",
                 "ble",
@@ -116,7 +125,10 @@
         {
             "label": "Run master_program.py on alt robot",
             "type": "shell",
-            "command": "${workspaceFolder}/.venv/Scripts/pybricksdev.exe",
+            "command": "${workspaceFolder}/.venv/bin/pybricksdev",
+            "windows": {
+                "command": "${workspaceFolder}/.venv/Scripts/pybricksdev.exe"
+            },
             "args": [
                 "run",
                 "ble",
@@ -152,17 +164,7 @@
             "id": "robotName",
             "description": "Which Robot?",
             "options": [
-                "BOB",
-                "CURIOSITY",
-                "GABE",
-                "LEROYYY",
-                "MITZVAH",
-                "NOTDECLAN",
-                "OAKS",
-                "PATRIOT",
-                "SUPERNOVA",
-                "TIM",
-                "TIMOTHY"
+                "Cobra Bytes 1"
             ]
         }
     ]
