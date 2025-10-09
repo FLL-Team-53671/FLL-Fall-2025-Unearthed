@@ -164,7 +164,8 @@
             "id": "robotName",
             "description": "Which Robot?",
             "options": [
-                "Cuddles"
+                "Cuddles",
+                "Pez"
             ]
         }
     ]
