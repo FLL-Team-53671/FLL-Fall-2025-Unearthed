@@ -14,7 +14,6 @@ from pybricks.robotics import DriveBase
 from pybricks.hubs import PrimeHub
 from pybricks.tools import wait
 from pybricks import version
-from utils import *
 
 # All default constant percentages will be defined here
 TIRE_DIAMETER = 56  # mm
