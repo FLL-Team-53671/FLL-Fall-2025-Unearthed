@@ -14,12 +14,8 @@
         "**/CVS": true,
         "**/README.md": true,
         "**/Thumbs.db": true,
-        "base_robot*.py": true,
-        "colorTest.py": true,
-        "master_program.py": true,
         "pyproject.toml": true,
         "requirements.txt": true,
-        "utils.py": true,
         "uv.lock": true
     },
     "task.allowAutomaticTasks": "on",
