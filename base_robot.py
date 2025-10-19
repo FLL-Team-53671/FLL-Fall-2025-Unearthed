@@ -45,9 +45,9 @@ class BaseRobot:
         )
 
         self.leftAttachmentMotor = Motor(Port.B)
-        self.rightAttachmentMotor = Motor(Port.D)
+        #self.rightAttachmentMotor = Motor(Port.D)
 
-        self.colorSensor = ColorSensor(Port.F)
+        #self.colorSensor = ColorSensor(Port.F)
 
 
 # Write all of the "things" that your robot will need to do.
