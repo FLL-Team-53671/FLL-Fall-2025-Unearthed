@@ -37,7 +37,7 @@
             }
         },
         {
-            "label": "Run master_program.py on my robot",
+            "label": "Run main_program.py on my robot",
             "type": "shell",
             "command": "${workspaceFolder}/.venv/bin/pybricksdev",
             "windows": {
@@ -48,7 +48,7 @@
                 "ble",
                 "--name",
                 "${config:fllRobotName}",
-                "master_program.py"
+                "main_program.py"
             ],
             "problemMatcher": {
                 "owner": "python",
@@ -123,7 +123,7 @@
             }
         },
         {
-            "label": "Run master_program.py on alt robot",
+            "label": "Run main_program.py on alt robot",
             "type": "shell",
             "command": "${workspaceFolder}/.venv/bin/pybricksdev",
             "windows": {
@@ -134,7 +134,7 @@
                 "ble",
                 "--name",
                 "${input:robotName}",
-                "master_program.py"
+                "main_program.py"
             ],
             "problemMatcher": {
                 "owner": "python",
