@@ -17,6 +17,9 @@ from base_robot import BaseRobot
 from robots import AdvancedDrivingBaseRobot
 
 
+CONTROLLER = None
+
+
 def run(
     robot: BaseRobot,
     remote_speed: int = 200,
@@ -144,4 +147,4 @@ def convert_stick_input(stick):
 
 if __name__ == "__main__":
     r = AdvancedDrivingBaseRobot()
-    Run(r)
+    run(r)

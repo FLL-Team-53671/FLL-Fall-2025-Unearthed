@@ -6,7 +6,7 @@ import xbox_remote_control
 from robots import *
 
 
-program = hub_menu("a", "b", "c", "X")
+program = hub_menu("a", "b", "c", "x")
 if program == "a":
     r = AdvancedDrivingBaseRobot()
     mission12.Run(r)
@@ -16,6 +16,6 @@ elif program == "b":
 elif program == "c":
     r = BaseRobot()
     sample_mission2.Run(r)
-elif program == "X":
+elif program == "x":
     r = AdvancedDrivingBaseRobot()
     xbox_remote_control.run(r)

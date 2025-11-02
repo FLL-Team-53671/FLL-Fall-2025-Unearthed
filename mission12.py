@@ -6,14 +6,14 @@ import robots
 # that if needed.
 
 
-def Run(r: BaseRobot):
+def Run(r: AdvancedBaseRobot):
     # r.hub.display.text("RobBot")
     # r.moveLeftAttachmentMotorForMillis(10, 10)
     # r.robot.arc(25, 45)
-
-    hello = "(❁´◡`❁)"
-    r.hub.display.text(hello)
-    # br.hub.display.char(":")
+    r.driveForDistance(100, 300)
+    # hello="(❁´◡`❁)"
+    # r.hub.display.text(hello)
+    # r.hub.display.char(":")
 
 
 if __name__ == "__main__":

@@ -31,7 +31,7 @@ class DrivingBaseRobot(BaseRobot):
         )
 
         self.leftAttachmentMotor = Motor(Port.B)
-        # self.rightAttachmentMotor = Motor(Port.D)
+        self.rightAttachmentMotor = Motor(Port.A)
 
         # self.colorSensor = ColorSensor(Port.F)
 
