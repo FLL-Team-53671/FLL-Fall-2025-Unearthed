@@ -1,3 +1,5 @@
+# TODO: Delete this file once no one is using it anymore. Use robots.py instead.
+
 from pybricks.pupdevices import Motor, ColorSensor
 
 from pybricks.parameters import (

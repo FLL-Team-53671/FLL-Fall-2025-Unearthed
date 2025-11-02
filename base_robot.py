@@ -1,3 +1,7 @@
+"""
+BaseRobot functionality shared by all of the robot designs in robots.py.
+"""
+
 from pybricks.pupdevices import Motor, ColorSensor
 
 from pybricks.parameters import (
@@ -15,28 +19,21 @@ from pybricks.hubs import PrimeHub
 from pybricks.tools import wait
 from pybricks import version
 
-# All default constant percentages will be defined here
-TIRE_DIAMETER = 56  # mm
-AXLE_TRACK = 103  # distance between the wheels, mm
 
-
-# Check the pybricks API documentation to see how these parameters are set
-# and used. Add other parameters that your robot needs.
 class BaseRobot:
     """
-    A collection of methods and Spike Prime for FLL Team 24277. \
-    Uses pybricks for most functionality.
+    Base robot with functionality that works across a variety of robot designs.
 
-    Example:
-
-    >>> from base_robot import *
-    >>> br = BaseRobot()
+    Don't use BaseRobot directly. Instead, use robot classes that extend it.
     """
 
     def __init__(self):
         self.hub = PrimeHub(top_side=Axis.Z, front_side=-Axis.Y)
         self.leftDriveMotor = Motor(Port.E, Direction.COUNTERCLOCKWISE)
         self.rightDriveMotor = Motor(Port.A)
+
+        TIRE_DIAMETER = 56  # mm
+        AXLE_TRACK = 103  # distance between the wheels, mm
         self.robot = DriveBase(
             self.leftDriveMotor,
             self.rightDriveMotor,
@@ -45,16 +42,14 @@ class BaseRobot:
         )
 
         self.leftAttachmentMotor = Motor(Port.B)
-        #self.rightAttachmentMotor = Motor(Port.D)
+        self.rightAttachmentMotor = None
+        self.colorSensor = None
 
-        #self.colorSensor = ColorSensor(Port.F)
-
-
-# Write all of the "things" that your robot will need to do.
-# These methods will then be available for team members to program the robot
-# their mission
-#
-# Here, we have two examples to get you started.
+    # Write all of the "things" that your robot will need to do.
+    # These methods will then be available for team members to program the robot
+    # their mission
+    #
+    # Here, we have two examples to get you started.
     def moveLeftAttachmentMotorForMillis(
         self,
         millis,
@@ -78,7 +73,6 @@ class BaseRobot:
         negative numbers turn it to the left.
         """
         self.leftAttachmentMotor.run_time(speed, millis)
-
 
     def driveForDistance(
         self,
