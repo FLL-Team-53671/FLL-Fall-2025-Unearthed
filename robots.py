@@ -87,3 +87,11 @@ class PiRobot(BaseRobot):
 
         # left color sensor: A
         # right color sensor : C
+
+
+# Dictionary from robot name to robot class. Make sure to add a new entry in
+# this dictionary if you configure a new robot.
+ROBOT_CONFIG = {
+    "Cuddles": AdvancedDrivingBaseRobot,
+    "RobBot": PiRobot,
+}
