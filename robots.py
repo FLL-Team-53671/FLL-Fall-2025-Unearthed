@@ -59,3 +59,31 @@ class AdvancedDrivingBaseRobot(BaseRobot):
 
         self.leftAttachmentMotor = Motor(Port.C, Direction.COUNTERCLOCKWISE)
         self.rightAttachmentMotor = Motor(Port.D)
+
+
+class PiRobot(BaseRobot):
+    """The Advanced Drive Base from the SPIKE Prime website.
+
+    Build instructions:
+    https://education.lego.com/en-us/lessons/prime-competition-ready/assembling-an-advanced-driving-base/
+    """
+
+    def __init__(self):
+        self.hub = PrimeHub(top_side=Axis.Z, front_side=-Axis.Y)
+        self.leftDriveMotor = Motor(Port.F, Direction.COUNTERCLOCKWISE)
+        self.rightDriveMotor = Motor(Port.B)
+
+        TIRE_DIAMETER = 130  # mm
+        AXLE_TRACK = 155  # distance between the wheels, mm
+        self.robot = DriveBase(
+            self.leftDriveMotor,
+            self.rightDriveMotor,
+            TIRE_DIAMETER,
+            AXLE_TRACK,
+        )
+
+        self.leftAttachmentMotor = Motor(Port.D, Direction.COUNTERCLOCKWISE)
+        self.rightAttachmentMotor = Motor(Port.E)
+
+        # left color sensor: A
+        # right color sensor : C
