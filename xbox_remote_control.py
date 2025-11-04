@@ -14,8 +14,7 @@ from pybricks.tools import wait
 from pybricks.iodevices import XboxController
 
 from base_robot import BaseRobot
-from robots import AdvancedDrivingBaseRobot
-
+from current_robot import current_robot
 
 CONTROLLER = None
 
@@ -146,5 +145,5 @@ def convert_stick_input(stick):
 
 
 if __name__ == "__main__":
-    r = AdvancedDrivingBaseRobot()
+    r = current_robot()
     run(r)
