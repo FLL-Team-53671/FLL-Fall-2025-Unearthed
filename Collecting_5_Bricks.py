@@ -16,19 +16,24 @@ def Run(br: BaseRobot):
     #  br.robot.straight(450)
     # br.robot.turn(-115)
     # br.robot.straight(1000)
-    for i in range (5):
-      br.moveLeftAttachmentMotorForMillis(1300, 90)
-      br.driveForDistance(640, 200)
-      br.moveLeftAttachmentMotorForMillis(1300, -90)
-      br.driveForDistance(-640, 200)
-      br.moveLeftAttachmentMotorForMillis(1300, 90)
-      br.robot.turn(-90)
-      br.driveForDistance(100, 200)
-      br.moveLeftAttachmentMotorForMillis(1300, -90)
-      br.robot.turn(90)
+    #for i in range (5):
+      #br.driveForDistance(640, 200)
+      #br.moveArmDownIfUp()
+      #br.driveForDistance(-640, 200)
+      #br.moveArmUpIfDown
+      #br.robot.turn(-90)
+      #br.driveForDistance(100, 200)
+      #br.moveArmDownIfUp
+      #br.robot.turn(90)
     br.hub.display.text("YAY")
 
 
 if __name__ == "__main__":
     br = BaseRobot()
     Run(br)
+    for i in range (10):
+      br.driveForDistance(70, 120)
+      br.driveForDistance(-50, 80)
+                      
+    
+
