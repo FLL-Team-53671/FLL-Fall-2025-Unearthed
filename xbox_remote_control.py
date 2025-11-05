@@ -49,8 +49,10 @@ def run(
 
     # Zero out the odometry and attachment motors
     drivebase.reset()
-    left_attach.reset_angle(0)
-    right_attach.reset_angle(0)
+    if left_attach is not None:
+        left_attach.reset_angle(0)
+    if right_attach is not None:
+        right_attach.reset_angle(0)
 
     # Override the drivebase values to make it easier to control
     drivebase.settings(
@@ -70,10 +72,12 @@ def run(
             # then reset all of these measurements
             print(drivebase.distance(), " mm driven")
             print(drivebase.angle(), " degrees turned")
-            print(left_attach.angle(), " degrees left attachment")
-            print(right_attach.angle(), " degrees right attachment")
-            left_attach.reset_angle(0)
-            right_attach.reset_angle(0)
+            if left_attach is not None:
+                print(left_attach.angle(), " degrees left attachment")
+                left_attach.reset_angle(0)
+            if right_attach is not None:
+                print(right_attach.angle(), " degrees right attachment")
+                right_attach.reset_angle(0)
             drivebase.reset()
             CONTROLLER.rumble(50, 400)
             hub.speaker.beep(500, 200)
@@ -100,30 +104,32 @@ def run(
                 drivebase.brake()
 
             # If left trigger input make the attachment move
-            if left_trigger != 0:
-                if Button.LB in CONTROLLER.buttons.pressed():
-                    # Control the Left attachment motor
-                    # Left trigger = Left motor forward
-                    # Left trigger + Left bumper  = Left motor backwards
-                    left_attach.run(left_trigger * attach_speed * -1)
+            if left_attach is not None:
+                if left_trigger != 0:
+                    if Button.LB in CONTROLLER.buttons.pressed():
+                        # Control the Left attachment motor
+                        # Left trigger = Left motor forward
+                        # Left trigger + Left bumper  = Left motor backwards
+                        left_attach.run(left_trigger * attach_speed * -1)
+                    else:
+                        left_attach.run(left_trigger * attach_speed)
+                # Else stop the left attachment.
                 else:
-                    left_attach.run(left_trigger * attach_speed)
-            # Else stop the left attachment.
-            else:
-                left_attach.brake()
+                    left_attach.brake()
 
             # If Right trigger input make the attachment move
-            if right_trigger != 0:
-                if Button.RB in CONTROLLER.buttons.pressed():
-                    # Control the Right attachment motor
-                    # Right trigger = right motor forward
-                    # Right trigger + right bumper  = right motor backwards
-                    right_attach.run(right_trigger * attach_speed * -1)
+            if right_attach is not None:
+                if right_trigger != 0:
+                    if Button.RB in CONTROLLER.buttons.pressed():
+                        # Control the Right attachment motor
+                        # Right trigger = right motor forward
+                        # Right trigger + right bumper  = right motor backwards
+                        right_attach.run(right_trigger * attach_speed * -1)
+                    else:
+                        right_attach.run(right_trigger * attach_speed)
+                # Else stop the right attachment.
                 else:
-                    right_attach.run(right_trigger * attach_speed)
-            # Else stop the right attachment.
-            else:
-                right_attach.brake()
+                    right_attach.brake()
         wait(10)
 
 

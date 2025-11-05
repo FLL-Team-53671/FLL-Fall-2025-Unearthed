@@ -17,6 +17,6 @@ elif program == "b":
 elif program == "c":
     sample_mission2.Run(r)
 elif program == "M":
-    melissa.run(r)
+    melissa.Run(r)
 elif program == "x":
     xbox_remote_control.run(r)
