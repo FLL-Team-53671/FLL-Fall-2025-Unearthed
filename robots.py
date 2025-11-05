@@ -1,0 +1,89 @@
+"""A robot class for each different robot design.
+
+Ideas to try:
+- https://github.com/MonongahelaCryptidCooperative/RobotDesigns/blob/main/final%20assembly.pdf
+- https://primelessons.org/en/RobotDesigns.html
+"""
+
+from base_robot import *
+
+
+class DrivingBaseRobot(BaseRobot):
+    """
+    Basic driving base from the SPIKE Prime website.
+
+    Building instructions:
+    - https://spike.legoeducation.com/prime/models/bltc58e302d70cf6530
+    """
+
+    def __init__(self):
+        self.hub = PrimeHub(top_side=Axis.Z, front_side=-Axis.Y)
+        self.leftDriveMotor = Motor(Port.E, Direction.COUNTERCLOCKWISE)
+        self.rightDriveMotor = Motor(Port.A)
+
+        TIRE_DIAMETER = 56  # mm
+        AXLE_TRACK = 103  # distance between the wheels, mm
+        self.robot = DriveBase(
+            self.leftDriveMotor,
+            self.rightDriveMotor,
+            TIRE_DIAMETER,
+            AXLE_TRACK,
+        )
+
+        self.leftAttachmentMotor = Motor(Port.B)
+        self.rightAttachmentMotor = Motor(Port.A)
+
+        # self.colorSensor = ColorSensor(Port.F)
+
+
+class AdvancedDrivingBaseRobot(BaseRobot):
+    """The Advanced Drive Base from the SPIKE Prime website.
+
+    Build instructions:
+    https://education.lego.com/en-us/lessons/prime-competition-ready/assembling-an-advanced-driving-base/
+    """
+
+    def __init__(self):
+        self.hub = PrimeHub(top_side=Axis.Z, front_side=-Axis.Y)
+        self.leftDriveMotor = Motor(Port.E, Direction.COUNTERCLOCKWISE)
+        self.rightDriveMotor = Motor(Port.A)
+
+        TIRE_DIAMETER = 130  # mm
+        AXLE_TRACK = 155  # distance between the wheels, mm
+        self.robot = DriveBase(
+            self.leftDriveMotor,
+            self.rightDriveMotor,
+            TIRE_DIAMETER,
+            AXLE_TRACK,
+        )
+
+        self.leftAttachmentMotor = Motor(Port.C, Direction.COUNTERCLOCKWISE)
+        self.rightAttachmentMotor = Motor(Port.D)
+
+
+class PiRobot(BaseRobot):
+    """The Advanced Drive Base from the SPIKE Prime website.
+
+    Build instructions:
+    https://education.lego.com/en-us/lessons/prime-competition-ready/assembling-an-advanced-driving-base/
+    """
+
+    def __init__(self):
+        self.hub = PrimeHub(top_side=Axis.Z, front_side=-Axis.Y)
+        self.leftDriveMotor = Motor(Port.F, Direction.COUNTERCLOCKWISE)
+        self.rightDriveMotor = Motor(Port.B)
+
+        TIRE_DIAMETER = 130  # mm
+        AXLE_TRACK = 155  # distance between the wheels, mm
+        self.robot = DriveBase(
+            self.leftDriveMotor,
+            self.rightDriveMotor,
+            TIRE_DIAMETER,
+            AXLE_TRACK,
+        )
+
+        self.leftAttachmentMotor = Motor(Port.D, Direction.COUNTERCLOCKWISE)
+        self.rightAttachmentMotor = Motor(Port.E)
+
+        # left color sensor: A
+        # right color sensor : C

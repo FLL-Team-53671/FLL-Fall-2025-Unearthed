@@ -1,30 +1,22 @@
-from base_robot import *
+from pybricks.tools import hub_menu
 
-# Import missions
-import Collecting_5_Bricks, sample_mission2
+import mission12
+import sample_mission1
+import sample_mission2
+import xbox_remote_control
+from robots import *
 
 
-br = BaseRobot()
-
-pressed = br.hub.buttons.pressed()
-
-# here's one way to create a master program. There are many other ways to do
-# it, but that is up to the team.
-# For example, here's another way:
-# https://pybricks.com/project/spike-hub-menu/
-
-# Here, we just wait until a button is pressed before starting the mission
-while Button.LEFT not in pressed:
-    pressed = br.hub.buttons.pressed()
-
-Collecting_5_Bricks.Run(br)
-
-# presumably the robot returned to base, and you have now configured it to
-# run the next mission. In any case, when sample_mission1 is done running
-# the robot goes again into the loop to wait for the button press. This
-# time we will run the sample_mission2 program
-
-while Button.LEFT not in pressed:
-    pressed = br.hub.buttons.pressed()
-
-sample_mission2.Run(br)
+program = hub_menu("a", "b", "c", "x")
+if program == "a":
+    r = AdvancedDrivingBaseRobot()
+    mission12.Run(r)
+elif program == "b":
+    r = BaseRobot()
+    sample_mission1.Run(r)
+elif program == "c":
+    r = BaseRobot()
+    sample_mission2.Run(r)
+elif program == "x":
+    r = PiRobot()
+    xbox_remote_control.run(r)

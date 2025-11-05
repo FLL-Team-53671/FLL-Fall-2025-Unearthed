@@ -1,6 +1,4 @@
-"""
-BaseRobot functionality shared by all of the robot designs in robots.py.
-"""
+# TODO: Delete this file once no one is using it anymore. Use robots.py instead.
 
 from pybricks.pupdevices import Motor, ColorSensor
 
@@ -19,21 +17,27 @@ from pybricks.hubs import PrimeHub
 from pybricks.tools import wait
 from pybricks import version
 
+# All default constant percentages will be defined here
+TIRE_DIAMETER = 130  # mm
+AXLE_TRACK = 155  # distance between the wheels, mm
 
-class BaseRobot:
+
+# Check the pybricks API documentation to see how these parameters are set
+# and used. Add other parameters that your robot needs.
+class AdvancedBaseRobot:
     """
-    Base robot with functionality that works across a variety of robot designs.
+    A collection of methods and Spike Prime for FLL Team 24277. \
+    Uses pybricks for most functionality.
+    Example:
 
-    Don't use BaseRobot directly. Instead, use robot classes that extend it.
+    >>> from base_robot import *
+    >>> br = BaseRobot()
     """
 
     def __init__(self):
         self.hub = PrimeHub(top_side=Axis.Z, front_side=-Axis.Y)
         self.leftDriveMotor = Motor(Port.E, Direction.COUNTERCLOCKWISE)
         self.rightDriveMotor = Motor(Port.A)
-
-        TIRE_DIAMETER = 56  # mm
-        AXLE_TRACK = 103  # distance between the wheels, mm
         self.robot = DriveBase(
             self.leftDriveMotor,
             self.rightDriveMotor,
@@ -41,9 +45,10 @@ class BaseRobot:
             AXLE_TRACK,
         )
 
-        self.leftAttachmentMotor = Motor(Port.B)
-        self.rightAttachmentMotor = None
-        self.colorSensor = None
+        self.leftAttachmentMotor = Motor(Port.C, Direction.COUNTERCLOCKWISE)
+        self.rightAttachmentMotor = Motor(Port.D)
+
+        # self.colorSensor = ColorSensor(Port.F)
 
     # Write all of the "things" that your robot will need to do.
     # These methods will then be available for team members to program the robot
@@ -73,12 +78,6 @@ class BaseRobot:
         negative numbers turn it to the left.
         """
         self.leftAttachmentMotor.run_time(speed, millis)
-
-    def moveArmUpIfDown(self):
-        self.moveLeftAttachmentMotorForMillis(1300, 90)
-
-    def moveArmDownIfUp(self):
-        self.moveLeftAttachmentMotorForMillis(1300, -90)
 
     def driveForDistance(
         self,
