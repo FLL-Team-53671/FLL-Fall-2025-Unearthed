@@ -14,6 +14,7 @@
         "**/CVS": true,
         "**/README.md": true,
         "**/Thumbs.db": true,
+        "current_robot_name.py": true,
         "pyproject.toml": true,
         "requirements.txt": true,
         "uv.lock": true

@@ -74,6 +74,12 @@ class BaseRobot:
         """
         self.leftAttachmentMotor.run_time(speed, millis)
 
+    def moveArmUpIfDown(self):
+        self.moveLeftAttachmentMotorForMillis(1300, 90)
+
+    def moveArmDownIfUp(self):
+        self.moveLeftAttachmentMotorForMillis(1300, -90)
+
     def driveForDistance(
         self,
         distance,
