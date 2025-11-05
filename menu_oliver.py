@@ -1,6 +1,6 @@
 from base_robot import BaseRobot
 from pybricks.tools import wait
-from robots import AdvancedDrivingBaseRobot
+from current_robot import current_robot
 
 
 def Run(br: BaseRobot):
@@ -42,5 +42,5 @@ program_number = 1
 
 
 if __name__ == "__main__":
-    r = AdvancedDrivingBaseRobot()
+    r = current_robot()
     Run(r)

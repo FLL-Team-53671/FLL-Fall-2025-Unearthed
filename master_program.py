@@ -17,8 +17,6 @@ elif program == "b":
 elif program == "c":
     sample_mission2.Run(r)
 elif program == "M":
-    #r = PiRobot()
-    r = AdvancedDrivingBaseRobot
     melissa.run(r)
 elif program == "x":
     xbox_remote_control.run(r)
