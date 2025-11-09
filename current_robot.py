@@ -15,6 +15,9 @@
 # access this directly. Just call `current_robot` and let it do its thing.
 _CURRENT_ROBOT = None
 
+from base_robot import BaseRobot
+from robots import ROBOT_CONFIG
+
 
 def current_robot() -> BaseRobot:
     """

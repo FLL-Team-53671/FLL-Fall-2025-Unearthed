@@ -8,7 +8,7 @@ from current_robot import current_robot
 
 def Run(br: BaseRobot):
     br.moveLeftAttachmentMotorForMillis(millis=500, speed=250)
-    br.driveForDistance(600)
+    br.driveForDistance(600, 200)
 
 
 if __name__ == "__main__":
