@@ -27,13 +27,13 @@ class BaseRobot:
     Don't use BaseRobot directly. Instead, use robot classes that extend it.
     """
 
-    hub = None
-    leftDriveMotor = None
-    rightDriveMotor = None
-    robot = None
-    leftAttachmentMotor = None
-    rightAttachmentMotor = None
-    colorSensor = None
+    hub: PrimeHub | None = None
+    leftDriveMotor: Motor | None = None
+    rightDriveMotor: Motor | None = None
+    robot: DriveBase | None = None
+    leftAttachmentMotor: Motor | None = None
+    rightAttachmentMotor: Motor | None = None
+    colorSensor: ColorSensor | None = None
 
     # Write all of the "things" that your robot will need to do.
     # These methods will then be available for team members to program the robot

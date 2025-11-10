@@ -39,14 +39,18 @@ def current_robot() -> BaseRobot:
 
     try:
         from current_robot_name import ROBOT_NAME
-
-        robot_class = ROBOT_CONFIG.get(ROBOT_NAME, default_robot_class)
     except ImportError as e:
         print("Error: ", e)
         print(
             "Could not import the robot name. Something may be wrong with "
             "the task configuration in .jscode/tasks.json."
         )
+
+    try:
+        robot_class = ROBOT_CONFIG[ROBOT_NAME]
+    except KeyError as e:
+        print("Could not find the robot name:", ROBOT_NAME)
+        print("Make sure it is configured in robots.py")
         robot_class = default_robot_class
 
     _CURRENT_ROBOT = robot_class()
