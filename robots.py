@@ -17,7 +17,7 @@ class DrivingBaseRobot(BaseRobot):
     """
 
     def __init__(self):
-        self.hub = PrimeHub(top_side=Axis.Z, front_side=-Axis.Y)
+        self.hub = PrimeHub(top_side=Axis.Z, front_side=-Axis.Y)  # type: ignore
         self.leftDriveMotor = Motor(Port.E, Direction.COUNTERCLOCKWISE)
         self.rightDriveMotor = Motor(Port.A)
 
@@ -44,7 +44,7 @@ class AdvancedDrivingBaseRobot(BaseRobot):
     """
 
     def __init__(self):
-        self.hub = PrimeHub(top_side=Axis.Z, front_side=-Axis.Y)
+        self.hub = PrimeHub(top_side=Axis.Z, front_side=-Axis.Y)  # type: ignore
         self.leftDriveMotor = Motor(Port.E, Direction.COUNTERCLOCKWISE)
         self.rightDriveMotor = Motor(Port.A)
 
@@ -69,11 +69,11 @@ class PiRobot(BaseRobot):
     """
 
     def __init__(self):
-        self.hub = PrimeHub(top_side=Axis.Z, front_side=-Axis.Y)
+        self.hub = PrimeHub(top_side=Axis.Z, front_side=-Axis.Y)  # type: ignore
         self.leftDriveMotor = Motor(Port.F, Direction.COUNTERCLOCKWISE)
         self.rightDriveMotor = Motor(Port.B)
 
-        TIRE_DIAMETER = 130  # mm
+        TIRE_DIAMETER = 88  # mm
         AXLE_TRACK = 155  # distance between the wheels, mm
         self.robot = DriveBase(
             self.leftDriveMotor,

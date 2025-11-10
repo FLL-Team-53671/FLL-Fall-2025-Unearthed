@@ -31,6 +31,9 @@ def run(
     Lanch the Xbox Controller RC Mode.
     """
 
+    assert robot.hub is not None
+    assert robot.robot is not None
+
     # Connect to controller if not yet connected)
     robot.hub.light.blink(Color.RED, [200, 200])
     global CONTROLLER
