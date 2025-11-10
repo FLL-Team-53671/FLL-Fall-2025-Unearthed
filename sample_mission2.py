@@ -5,10 +5,12 @@ from current_robot import current_robot
 # Normally a mission is one run from base, but there are ways to do more than
 # that if needed.
 
+# Forge Mission
+
 
 def Run(br: BaseRobot):
-    br.moveLeftAttachmentMotorForMillis(millis=500, speed=250)
-    br.driveForDistance(600, 200)
+    br.driveForDistance(700, 200)
+    br.robot.arc(-150, 45)
 
 
 if __name__ == "__main__":
