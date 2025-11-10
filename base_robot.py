@@ -27,23 +27,13 @@ class BaseRobot:
     Don't use BaseRobot directly. Instead, use robot classes that extend it.
     """
 
-    def __init__(self):
-        self.hub = PrimeHub(top_side=Axis.Z, front_side=-Axis.Y)
-        self.leftDriveMotor = Motor(Port.E, Direction.COUNTERCLOCKWISE)
-        self.rightDriveMotor = Motor(Port.A)
-
-        TIRE_DIAMETER = 56  # mm
-        AXLE_TRACK = 103  # distance between the wheels, mm
-        self.robot = DriveBase(
-            self.leftDriveMotor,
-            self.rightDriveMotor,
-            TIRE_DIAMETER,
-            AXLE_TRACK,
-        )
-
-        self.leftAttachmentMotor = Motor(Port.B)
-        self.rightAttachmentMotor = None
-        self.colorSensor = None
+    hub = None
+    leftDriveMotor = None
+    rightDriveMotor = None
+    robot = None
+    leftAttachmentMotor = None
+    rightAttachmentMotor = None
+    colorSensor = None
 
     # Write all of the "things" that your robot will need to do.
     # These methods will then be available for team members to program the robot
