@@ -2,7 +2,7 @@
 BaseRobot functionality shared by all of the robot designs in robots.py.
 """
 
-from typing import cast
+# from typing import cast
 from pybricks.pupdevices import Motor, ColorSensor
 
 from pybricks.parameters import (
@@ -28,13 +28,13 @@ class BaseRobot:
     Don't use BaseRobot directly. Instead, use robot classes that extend it.
     """
 
-    hub = cast(PrimeHub, None)
-    leftDriveMotor = cast(Motor, None)
-    rightDriveMotor = cast(Motor, None)
-    robot = cast(DriveBase, None)
-    leftAttachmentMotor = cast(Motor, None)
-    rightAttachmentMotor = cast(Motor, None)
-    colorSensor = cast(ColorSensor, None)
+    hub: PrimeHub | None = None
+    leftDriveMotor: Motor | None = None
+    rightDriveMotor: Motor | None = None
+    robot: DriveBase | None = None
+    leftAttachmentMotor: Motor | None = None
+    rightAttachmentMotor: Motor | None = None
+    colorSensor: ColorSensor | None = None
 
     # Write all of the "things" that your robot will need to do.
     # These methods will then be available for team members to program the robot
