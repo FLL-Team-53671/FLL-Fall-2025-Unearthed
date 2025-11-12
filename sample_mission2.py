@@ -7,10 +7,12 @@ from current_robot import current_robot
 
 # Forge Mission
 
+# . line up right wheel with 10th square right line make sure cuddles is on the wall to start
+
 
 def Run(br: BaseRobot):
-    br.driveForDistance(700, 200)
-    br.robot.arc(-150, 45)
+    br.driveForDistance(655, 200)
+    br.robot.arc(-120, 70)
 
 
 if __name__ == "__main__":
