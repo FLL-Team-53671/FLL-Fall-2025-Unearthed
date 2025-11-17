@@ -7,12 +7,12 @@ from current_robot import current_robot
 
 # Forge Mission
 
-# . line up right wheel with 10th square right line make sure cuddles is on the wall to start
+# . make sure cuddles is on the wall to start make the right castor right in front of the theta(o with a line in the middle)
 
 
 def Run(br: BaseRobot):
-    br.driveForDistance(655, 200)
-    br.robot.arc(-120, 70)
+    br.driveForDistance(670, 200)
+    br.robot.arc(-115, 50)
 
 
 if __name__ == "__main__":
