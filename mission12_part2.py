@@ -2,9 +2,6 @@ from base_robot import BaseRobot
 from current_robot import current_robot
 from pybricks.tools import wait
 
-# This is a mission program. You will have one of these for each "mission"
-# Normally a mission is one run from base, but there are ways to do more than
-# that if needed.
 
 
 def Run(br: BaseRobot):
@@ -15,13 +12,11 @@ def Run(br: BaseRobot):
     br.driveForDistance(550, 100)
     
     br.driveForDistance(-600, 100)
-    
+    #at the front of the red challenge rectangle lined up on the side
 
     # br.driveForDistance(100, 300)
 
-    # hello="(❁´◡`❁)"
-    # br.hub.display.text(hello)
-    # br.hub.display.char(":")
+    
 
 
 if __name__ == "__main__":
