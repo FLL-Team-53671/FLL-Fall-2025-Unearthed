@@ -10,9 +10,9 @@ def Run(br: BaseRobot):
     # br.moveLeftAttachmentMotorForMillis(10, 10)
     # br.robot.arc(25, 45)
     
-    br.driveForDistance(350, 100)
+    br.driveForDistance(300, 200)
     
-    br.driveForDistance(-400, 100)
+    br.driveForDistance(-350, 200)
     #8 squares from the front of the robot lined up on the wall
     
 
