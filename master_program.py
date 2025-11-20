@@ -9,7 +9,7 @@ import xbox_remote_control
 from current_robot import current_robot
 
 while True:
-    program = hub_menu("1", "2", "3", "x", "a")
+    program = hub_menu("1", "2", "3", "x", "A")
     r = current_robot()
     if program == "1":
         mission12_part1.Run(r)
@@ -19,5 +19,5 @@ while True:
         mission6_and_5.Run(r)
     elif program == "x":
         xbox_remote_control.run(r)
-    elif program == "a":
-        go_across_board.Run(r)
+    elif program == "A":
+        go_across_the_board.Run(r)
