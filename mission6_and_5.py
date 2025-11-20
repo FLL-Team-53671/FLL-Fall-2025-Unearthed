@@ -13,6 +13,8 @@ from current_robot import current_robot
 def Run(br: BaseRobot):
     br.driveForDistance(670, 200)
     br.robot.arc(-115, 50)
+    br.robot.arc(-115, -50)
+    br.driveForDistance(-670, 200)
 
 
 if __name__ == "__main__":
