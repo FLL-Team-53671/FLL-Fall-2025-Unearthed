@@ -11,7 +11,7 @@ def Run(br: BaseRobot):
     
     br.driveForDistance(530, 200)
     
-    br.driveForDistance(-580, 200)
+    br.driveForDistance(-600, 200)
     #at the front of the red challenge rectangle lined up on the side
     #the rectangle is at the 
     # br.driveForDistance(100, 300)
