@@ -93,5 +93,5 @@ class PiRobot(BaseRobot):
 # this dictionary if you configure a new robot.
 ROBOT_CONFIG = {
     "Cuddles": AdvancedDrivingBaseRobot,
-    "RobBot": PiRobot,
+    "RobBot": AdvancedDrivingBaseRobot,
 }
