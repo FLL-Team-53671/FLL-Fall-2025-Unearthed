@@ -11,12 +11,14 @@ from current_robot import current_robot
 
 
 def Run(br: BaseRobot):
-    br.driveForDistance(670, 100)
+    br.driveForDistance(670, 200)
     br.robot.arc(-115, 50)
+    br.driveForDistance(35, 200)
+    br.driveForDistance(-35, 200)
     br.robot.arc(-115, -50)
-    br.driveForDistance(-670, 100)
+    br.driveForDistance(-670, 200)
 
 
 if __name__ == "__main__":
-    r = current_robot()
-    Run(r)
+    br = current_robot()
+    Run(br)
