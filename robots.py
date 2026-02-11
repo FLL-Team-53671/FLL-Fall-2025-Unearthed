@@ -8,6 +8,7 @@ Ideas to try:
 from base_robot import *
 
 
+
 class DrivingBaseRobot(BaseRobot):
     """
     Basic driving base from the SPIKE Prime website.
@@ -18,8 +19,8 @@ class DrivingBaseRobot(BaseRobot):
 
     def __init__(self):
         self.hub = PrimeHub(top_side=Axis.Z, front_side=-Axis.Y)  # type: ignore
-        self.leftDriveMotor = Motor(Port.E, Direction.COUNTERCLOCKWISE)
-        self.rightDriveMotor = Motor(Port.A)
+        self.leftDriveMotor = Motor(Port.A, Direction.COUNTERCLOCKWISE)
+        self.rightDriveMotor = Motor(Port.D)
 
         TIRE_DIAMETER = 56  # mm
         AXLE_TRACK = 103  # distance between the wheels, mm
@@ -31,7 +32,7 @@ class DrivingBaseRobot(BaseRobot):
         )
 
         self.leftAttachmentMotor = Motor(Port.B)
-        self.rightAttachmentMotor = Motor(Port.A)
+        self.rightAttachmentMotor = Motor(Port.E)
 
         # self.colorSensor = ColorSensor(Port.F)
 
@@ -46,7 +47,7 @@ class AdvancedDrivingBaseRobot(BaseRobot):
     def __init__(self):
         self.hub = PrimeHub(top_side=Axis.Z, front_side=-Axis.Y)  # type: ignore
         self.leftDriveMotor = Motor(Port.A, Direction.COUNTERCLOCKWISE)
-        self.rightDriveMotor = Motor(Port.E)
+        self.rightDriveMotor = Motor(Port.D)
 
         TIRE_DIAMETER = 85  # mm
         AXLE_TRACK = 155  # distance between the wheels, mm
@@ -57,8 +58,8 @@ class AdvancedDrivingBaseRobot(BaseRobot):
             AXLE_TRACK,
         )
 
-        self.leftAttachmentMotor = Motor(Port.C, Direction.COUNTERCLOCKWISE)
-        self.rightAttachmentMotor = Motor(Port.D)
+        self.leftAttachmentMotor = Motor(Port.B, Direction.COUNTERCLOCKWISE)
+        self.rightAttachmentMotor = Motor(Port.E)
 
 
 class PiRobot(BaseRobot):
@@ -70,8 +71,8 @@ class PiRobot(BaseRobot):
 
     def __init__(self):
         self.hub = PrimeHub(top_side=Axis.Z, front_side=-Axis.Y)  # type: ignore
-        self.leftDriveMotor = Motor(Port.F, Direction.COUNTERCLOCKWISE)
-        self.rightDriveMotor = Motor(Port.B)
+        self.leftDriveMotor = Motor(Port.A, Direction.COUNTERCLOCKWISE)
+        self.rightDriveMotor = Motor(Port.D)
 
         TIRE_DIAMETER = 85  # mm
         AXLE_TRACK = 155  # distance between the wheels, mm
@@ -82,16 +83,16 @@ class PiRobot(BaseRobot):
             AXLE_TRACK,
         )
 
-        self.leftAttachmentMotor = Motor(Port.D, Direction.COUNTERCLOCKWISE)
+        self.leftAttachmentMotor = Motor(Port.B, Direction.COUNTERCLOCKWISE)
         self.rightAttachmentMotor = Motor(Port.E)
-
+        UltrasonicSensor(Port.C)
         # left color sensor: A
         # right color sensor : C
 
-
-# Dictionary from robot name to robot class. Make sure to add a new entry in
+        #distance prot is port c
+# Dictionary from robot me to robot class. Make sure to add a new entry in
 # this dictionary if you configure a new robot.
 ROBOT_CONFIG = {
     "Cuddles": AdvancedDrivingBaseRobot,
-    "RobBot": AdvancedDrivingBaseRobot,
+    "RobBot": PiRobot,
 }

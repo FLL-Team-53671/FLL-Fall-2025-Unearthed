@@ -19,7 +19,9 @@ from pybricks.robotics import DriveBase
 from pybricks.hubs import PrimeHub
 from pybricks.tools import wait
 from pybricks import version
-
+from pybricks.pupdevices import UltrasonicSensor
+from pybricks.parameters import Port
+from pybricks.pupdevices import Motor
 
 class BaseRobot:
     """
