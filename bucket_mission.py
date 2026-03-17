@@ -9,28 +9,19 @@ from current_robot import current_robot
 
 
 def Run(br: BaseRobot):
-    br.hub.display.char("1")
     br.driveForDistance(625, 200)
-    br.hub.display.char("2")
     br.robot.arc(-65, 80)
-    br.hub.display.char("3")
     br.driveForDistance(300, 200)
-    br.hub.display.char("4")
     br.robot.turn(105)
-    br.hub.display.char("5")
+    br.driveForDistance(-20, 200)
+    br.moveArmDownIfUp()
     br.moveArmUpIfDown()
-    # br.driveForDistance(315, 200)
+    br.driveForDistance(20, 200)
+    br.robot.turn(-105)
+    br.driveForDistance(-300, 200)
+    br.robot.arc(65, 80)
+    br.driveForDistance(-625, 200)
 
-
-# br.driveForDistance(-35, 200)
-# br.robot.arc(-115, -50)
-# br.driveForDistance(-670, 200)
-# br.driveForDistance(-150, 200)
-# br.robot.turn(-30)
-# br.driveForDistance(400, 200)
-# br.robot.turn(45)
-# br.driveForDistance(551, 200)
-# br.moveArmUpIfDown()
 
 if __name__ == "__main__":
     br = current_robot()
