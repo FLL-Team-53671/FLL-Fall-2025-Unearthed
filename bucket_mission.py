@@ -19,9 +19,9 @@ def Run(br: BaseRobot):
     br.driveForDistance(20, 200)
     br.robot.turn(-105)
     br.driveForDistance(-300, 200)
-    br.robot.arc(65, 80)
-    br.driveForDistance(-625, 200)
-
+    br.robot.turn(-120)
+    br.driveForDistance(645, 200)
+   
 
 if __name__ == "__main__":
     br = current_robot()
